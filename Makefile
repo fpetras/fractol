@@ -6,13 +6,15 @@
 #    By: fpetras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/04 09:42:02 by fpetras           #+#    #+#              #
-#    Updated: 2018/04/07 07:16:18 by fpetras          ###   ########.fr        #
+#    Updated: 2018/04/07 08:15:18 by fpetras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
 SRC = main.c \
+	  fractals.c \
+	  mandelbrot.c \
 	  keys.c \
 	  mouse.c \
 	  utilities.c \
