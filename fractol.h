@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/07 07:16:37 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/07 07:46:06 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include "libft/get_next_line/get_next_line.h"
 # include "libft/ft_printf/ft_printf.h"
 
-# include <fcntl.h> //open
-# include <stdio.h> //perror / strerror
 # include <math.h>
 # include <mlx.h>
 
@@ -50,7 +48,7 @@ typedef struct	s_fractol
 
 	void		*mlx;
 	void		*win;
-	void		*win2;
+//	void		*win2;
 
 	void		*img;
 	int			*image;
