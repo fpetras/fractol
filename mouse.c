@@ -6,13 +6,13 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 16:32:33 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 10:23:57 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 10:31:36 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		ft_mouse_press(int button, int x, int y, t_fract *f)
+int		ft_mouse(int button, int x, int y, t_fract *f)
 {
 	if (button == LEFT_CLICK)
 	{

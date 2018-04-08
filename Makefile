@@ -6,7 +6,7 @@
 #    By: fpetras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/04 09:42:02 by fpetras           #+#    #+#              #
-#    Updated: 2018/04/08 09:23:58 by fpetras          ###   ########.fr        #
+#    Updated: 2018/04/08 10:10:51 by fpetras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = fractol
 SRC = main.c \
 	  fractals.c \
 	  mandelbrot.c \
+	  julia.c \
 	  keys.c \
 	  mouse.c \
 	  zoom.c \

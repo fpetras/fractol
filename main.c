@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:53:12 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 08:48:45 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 10:42:42 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	ft_mlx(t_fract *f)
 {
 	mlx_key_hook(f->win, ft_keys, f);
-	mlx_mouse_hook(f->win, ft_mouse_press, f);
+	mlx_mouse_hook(f->win, ft_mouse, f);
 	mlx_hook(f->win, BUTTON_RELEASE, BUTTON_RELEASE_MASK, ft_mouse_release, f);
 	mlx_hook(f->win, MOTION_NOTIFY, POINTER_MOTION_MASK, ft_mouse_move, f);
 	mlx_hook(f->win, DESTROY_NOTIFY, STRUCTURE_NOTIFY_MASK, ft_exit, f);

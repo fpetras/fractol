@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 10:27:12 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 10:31:29 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,8 +123,9 @@ typedef struct	s_fractol
 
 int				ft_fractals(t_fract *f);
 void			*ft_mandelbrot(void *f);
+void			*ft_julia(void *f);
 int				ft_keys(int keycode, t_fract *f);
-int				ft_mouse_press(int button, int x, int y, t_fract *f);
+int				ft_mouse(int button, int x, int y, t_fract *f);
 int				ft_mouse_release(int button, int x, int y, t_fract *f);
 int				ft_mouse_move(int x, int y, t_fract *f);
 int				ft_mouse_zoom(int button, int x, int y, t_fract *f);
