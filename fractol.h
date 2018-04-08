@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/07 08:35:27 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 09:24:09 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include "libft/get_next_line/get_next_line.h"
 # include "libft/ft_printf/ft_printf.h"
 
-# include <math.h>
 # include <mlx.h>
+# include <math.h>
 # include <pthread.h>
 
 # define ESCAPE					53
@@ -40,11 +40,14 @@
 # define JULIA					2
 # define BURNINGSHIP			3
 
-# define WIDTH					750
-# define HEIGHT					750
+# define WIDTH					768
+# define HEIGHT					768
 
-# define ITERATIONS				100
 # define THREADS				32
+# define ITERATIONS				100
+
+# define MIN_ZOOM				-10
+# define MAX_ZOOM				360
 
 # define R(L, R) ((int)(L * R) << 16)
 # define G(L, G) ((int)(L * G) << 8)
@@ -61,6 +64,14 @@ typedef struct	s_double
 	double		x;
 	double		y;
 }				t_double;
+
+typedef	struct	s_move
+{
+	int			x;
+	int			y;
+	int			click_x;
+	int			click_y;
+}				t_move;
 
 typedef struct	s_complex
 {
@@ -79,21 +90,27 @@ typedef struct	s_fractol
 	void		*mlx;
 	void		*win;
 //	void		*win2;
-
+	//////img//////
 	void		*img;
 	int			*image;
 	int			bpp;
 	int			sl;
 	int			endian;
-
-	int			iteration;
+	///////////////
 	int			tx;
 	int			ty;
-	int			zoom;
-	double		zoom_lvl;
+	int			iteration;
 	t_point		coord;
-	t_double	move;
-	t_double	zoomc;
+	double		zoom;
+	int			zoom_lvl;
+	t_double	zoom_c;
+	t_double	translation;
+	t_move		move;
+	int			press;
+	//////julia//////
+	int			lock;
+	double		c_r;
+	double		c_i;
 }				t_fract;
 
 int				ft_fractals(t_fract *f);
@@ -102,8 +119,11 @@ int				ft_keys(int keycode, t_fract *f);
 int				ft_mouse_press(int button, int x, int y, t_fract *f);
 int				ft_mouse_release(int button, int x, int y, t_fract *f);
 int				ft_mouse_move(int x, int y, t_fract *f);
+int				ft_zoom(int button, int x, int y, t_fract *f);
 int				ft_color(double l);
+int				ft_reset(t_fract *f);
 int				ft_exit(t_fract *f);
+
 int				ft_strcasecmp(const char *s1, const char *s2);
 
 #endif

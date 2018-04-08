@@ -6,7 +6,7 @@
 #    By: fpetras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/04 09:42:02 by fpetras           #+#    #+#              #
-#    Updated: 2018/04/07 08:15:18 by fpetras          ###   ########.fr        #
+#    Updated: 2018/04/08 09:23:58 by fpetras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC = main.c \
 	  mandelbrot.c \
 	  keys.c \
 	  mouse.c \
+	  zoom.c \
 	  utilities.c \
 	  ft_strcasecmp.c
 

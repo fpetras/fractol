@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 07:15:25 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/07 08:13:43 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 09:03:32 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,20 @@
 int		ft_color(double l)
 {
 	return (R(l, 31) + G(l, 127) + B(l, 255));
+}
+
+int		ft_reset(t_fract *f)
+{
+	f->iteration = ITERATIONS;
+	f->zoom = 1;
+	f->zoom_lvl = 0;
+	f->translation.x = 0;
+	f->translation.y = 0;
+	f->lock = 0;
+	f->c_r = 0;
+	f->c_i = 0;
+	ft_fractals(f);
+	return (0);
 }
 
 int		ft_exit(t_fract *f)

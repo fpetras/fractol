@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:53:12 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/07 08:36:42 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 08:48:45 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ static int	ft_init(t_fract *f, int fractal)
 	f->image = (int*)mlx_get_data_addr(f->img, &f->bpp, &f->sl, &f->endian);
 	f->iteration = ITERATIONS;
 	f->zoom = 1;
-	f->zoom_lvl = 0.0;
-	f->move.x = 0;
-	f->move.y = 0;
-//	f->lock = 0;
-//	f->c_r = 0;
-//	f->c_i = 0;
+	f->zoom_lvl = 0;
+	f->translation.x = 0;
+	f->translation.y = 0;
+	f->lock = 0;
+	f->c_r = 0;
+	f->c_i = 0;
 	return (0);
 }
 
@@ -56,7 +56,7 @@ static int	ft_error(int ac, char **av)
 			ft_dprintf(2, "usage: %s [mandelbrot | julia | burningship]\n",
 				av[0]);
 	}
-	else	
+	else
 		ft_dprintf(2, "usage: %s [mandelbrot | julia | burningship]\n", av[0]);
 	return (-1);
 }
