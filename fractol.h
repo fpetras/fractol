@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 12:12:10 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 12:21:11 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,39 @@
 # include <math.h>
 # include <pthread.h>
 
-# define KEY_R					15
-# define PLUS					24
-# define MINUS					27
-# define SPACEBAR				49
-# define ESCAPE					53
-# define PAD_ADD				69
-# define PAD_SUB				78
-# define LEFT					123
-# define RIGHT					124
-# define DOWN					125
-# define UP						126
-
-# define LEFT_CLICK				1
-# define SCROLL_UP				4
-# define SCROLL_DOWN			5
-
 # define BUTTON_RELEASE			5
 # define MOTION_NOTIFY			6
 # define DESTROY_NOTIFY			17
 # define BUTTON_RELEASE_MASK	1L<<3
 # define POINTER_MOTION_MASK	1L<<6
 # define STRUCTURE_NOTIFY_MASK	1L<<17
+
+# define KEY_A					0
+# define KEY_S					1
+# define KEY_D					2
+# define KEY_W					13
+# define KEY_R					15
+# define KEY_1					18
+# define KEY_2					19
+# define KEY_3					20
+# define PLUS					24
+# define MINUS					27
+# define SPACEBAR				49
+# define ESCAPE					53
+# define PAD_ADD				69
+# define PAD_SUB				78
+# define PAD_1					83
+# define PAD_2					84
+# define PAD_3					85
+# define LEFT					123
+# define RIGHT					124
+# define DOWN					125
+# define UP						126
+# define FN						279
+
+# define LEFT_CLICK				1
+# define SCROLL_UP				4
+# define SCROLL_DOWN			5
 
 # define MANDELBROT				1
 # define JULIA					2
@@ -56,6 +67,8 @@
 
 # define MIN_ZOOM				-10
 # define MAX_ZOOM				360
+
+# define MAX_COLOR				1000
 
 # define R(L, R) ((int)(L * R) << 16)
 # define G(L, G) ((int)(L * G) << 8)
@@ -114,6 +127,7 @@ typedef struct	s_fractol
 	t_double	zoom_c;
 	t_double	translation;
 	t_move		move;
+	int			color_lvl;
 	int			press;
 	//////julia//////
 	int			lock;

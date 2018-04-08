@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:53:12 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 12:12:55 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 12:43:28 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,22 @@ static int	ft_mlx(t_fract *f)
 
 static int	ft_controls(t_fract *f)
 {
-	f->win2 = mlx_new_window(f->mlx, 400, 300, "Controls");
+	f->win2 = mlx_new_window(f->mlx, 400, 400, "Controls");
 	mlx_string_put(f->mlx, f->win2, 10, 10, 0xFFFFFF, "Keyboard Controls:");
 	mlx_string_put(f->mlx, f->win2, 50, 40, 0xCCCCCC, "[1] [2] [3]:     \
 	Change Fractal");
-	mlx_string_put(f->mlx, f->win2, 50, 70, 0xCCCCCC, "[^] [v] [<] [>]: \
-	Move");
-	mlx_string_put(f->mlx, f->win2, 50, 100, 0xCCCCCC, "[R]:             \
+	mlx_string_put(f->mlx, f->win2, 50, 70, 0xCCCCCC, "[+] [-]:         Zoom");
+	mlx_string_put(f->mlx, f->win2, 50, 100, 0xCCCCCC, "[^] [v] [<] [>]:");
+	mlx_string_put(f->mlx, f->win2, 50, 130, 0xCCCCCC, "[W] [A] [S] [D]:");
+	mlx_string_put(f->mlx, f->win2, 220, 115, 0xCCCCCC, "Move");
+	mlx_string_put(f->mlx, f->win2, 50, 160, 0xCCCCCC, "[SPACE]:         Lock");
+	mlx_string_put(f->mlx, f->win2, 50, 190, 0xCCCCCC, "[Fn]:            ???");
+	mlx_string_put(f->mlx, f->win2, 50, 220, 0xCCCCCC, "[R]:             \
 	Reset");
-	mlx_string_put(f->mlx, f->win2, 50, 130, 0xCCCCCC, "[SPACE]:         \
-	Lock");
-	mlx_string_put(f->mlx, f->win2, 10, 175, 0xFFFFFF, "Mouse Controls:");
-	mlx_string_put(f->mlx, f->win2, 50, 205, 0xCCCCCC, "[Wheel]:         \
-	Zoom");
-	mlx_string_put(f->mlx, f->win2, 50, 235, 0xCCCCCC, "[Click & Drag]:  \
-	Move");
+	mlx_string_put(f->mlx, f->win2, 50, 250, 0xCCCCCC, "[Esc]:           Quit");
+	mlx_string_put(f->mlx, f->win2, 10, 295, 0xFFFFFF, "Mouse Controls:");
+	mlx_string_put(f->mlx, f->win2, 50, 325, 0xCCCCCC, "[Wheel]:         Zoom");
+	mlx_string_put(f->mlx, f->win2, 50, 355, 0xCCCCCC, "[Click & Drag]:  Move");
 	return (0);
 }
 
@@ -56,6 +57,7 @@ static int	ft_init(t_fract *f, int fractal)
 	f->zoom_lvl = 0;
 	f->translation.x = 0;
 	f->translation.y = 0;
+	f->color_lvl = 5;
 	f->lock = 0;
 	f->c_r = 0;
 	f->c_i = 0;

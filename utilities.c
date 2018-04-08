@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 07:15:25 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 12:11:17 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 11:41:52 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		ft_reset(t_fract *f)
 	f->zoom_lvl = 0;
 	f->translation.x = 0;
 	f->translation.y = 0;
+	f->color_lvl = 5;
 	f->lock = 0;
 	f->c_r = 0;
 	f->c_i = 0;

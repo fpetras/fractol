@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 07:19:00 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 08:49:26 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 11:35:48 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_mandelbrot2(t_fract *t, t_complex c)
 		c.z_i = 2 * c.tmp_r * c.tmp_i + c.c_i;
 		i++;
 	}
-	l = (double)i / max * 5.0;
+	l = ((double)i / max) * t->color_lvl;
 	t->image[t->coord.y * WIDTH + t->coord.x] = (i < max) ? ft_color(l) : 0;
 	return (0);
 }
@@ -43,9 +43,9 @@ void		*ft_mandelbrot(void *f)
 	t_complex	c;
 
 	t = (t_fract*)f;
-	t->translation.x -= 0.5;
 	t->zoom_c.x = 0.3 * t->zoom * WIDTH;
 	t->zoom_c.y = 0.3 * t->zoom * HEIGHT;
+	t->translation.x -= 0.5;
 	t->coord.y = t->tx;
 	while (t->coord.y < t->ty)
 	{
