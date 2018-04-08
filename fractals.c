@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 08:00:08 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 10:35:40 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 12:55:30 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int		ft_fractals(t_fract *f)
 			pthread_create(&thr[i], NULL, ft_mandelbrot, &t[i]);
 		else if (f->fractal == JULIA)
 			pthread_create(&thr[i], NULL, ft_julia, &t[i]);
-//		else if (f->fractal == BURNINGSHIP)
-//			pthread_create(&thr[i], NULL, ft_burningship, &t[i]);
+		else if (f->fractal == BURNINGSHIP)
+			pthread_create(&thr[i], NULL, ft_burningship, &t[i]);
 	}
 	i = -1;
 	while (++i < THREADS)

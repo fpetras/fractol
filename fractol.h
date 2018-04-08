@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 12:21:11 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 12:56:22 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,13 +111,11 @@ typedef struct	s_fractol
 	void		*mlx;
 	void		*win;
 	void		*win2;
-	//////img//////
 	void		*img;
 	int			*image;
 	int			bpp;
 	int			sl;
 	int			endian;
-	///////////////
 	int			tx;
 	int			ty;
 	int			iteration;
@@ -129,7 +127,6 @@ typedef struct	s_fractol
 	t_move		move;
 	int			color_lvl;
 	int			press;
-	//////julia//////
 	int			lock;
 	double		c_r;
 	double		c_i;
@@ -138,6 +135,7 @@ typedef struct	s_fractol
 int				ft_fractals(t_fract *f);
 void			*ft_mandelbrot(void *f);
 void			*ft_julia(void *f);
+void			*ft_burningship(void *f);
 int				ft_keys(int keycode, t_fract *f);
 int				ft_mouse(int button, int x, int y, t_fract *f);
 int				ft_mouse_release(int button, int x, int y, t_fract *f);
