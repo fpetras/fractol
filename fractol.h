@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 10:00:20 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 10:27:12 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,21 @@
 # include <math.h>
 # include <pthread.h>
 
-# define ESCAPE					53
 # define KEY_R					15
 # define PLUS					24
 # define MINUS					27
 # define SPACEBAR				49
+# define ESCAPE					53
 # define PAD_ADD				69
 # define PAD_SUB				78
 # define LEFT					123
 # define RIGHT					124
 # define DOWN					125
 # define UP						126
+
+# define LEFT_CLICK				1
+# define SCROLL_UP				4
+# define SCROLL_DOWN			5
 
 # define BUTTON_RELEASE			5
 # define MOTION_NOTIFY			6
@@ -45,7 +49,7 @@
 # define BURNINGSHIP			3
 
 # define WIDTH					768
-# define HEIGHT					768
+# define HEIGHT					WIDTH
 
 # define THREADS				32
 # define ITERATIONS				100

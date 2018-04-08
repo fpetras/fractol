@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 16:32:33 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 09:41:51 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 10:23:57 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int		ft_mouse_press(int button, int x, int y, t_fract *f)
 {
-	if (button == 1)
+	if (button == LEFT_CLICK)
 	{
 		f->press = 1;
 		f->move.click_x = x;
 		f->move.click_y = y;
 	}
-	if (button == 4 || button == 5)
+	if (button == SCROLL_UP || button == SCROLL_DOWN)
 		ft_mouse_zoom(button, x, y, f);
 	return (0);
 }

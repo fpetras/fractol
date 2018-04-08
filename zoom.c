@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 14:08:19 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 09:42:44 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 10:26:02 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ int		ft_mouse_zoom(int button, int x, int y, t_fract *f)
 	tl = sqrt(pos.x * pos.x + pos.y * pos.y);
 	pos.x /= tl;
 	pos.y /= tl;
-	if (button == 4)
+	if (button == SCROLL_UP && f->zoom_lvl < MAX_ZOOM)
 	{
 		ft_zoom_in(f);
 		f->translation.y += (pos.y / f->zoom) / fabs((tl / (WIDTH / 25) - 18));
 		f->translation.x += (pos.x / f->zoom) / fabs((tl / (HEIGHT / 25) - 18));
 	}
-	if (button == 5)
+	if (button == SCROLL_DOWN && f->zoom_lvl > MIN_ZOOM)
 	{
 		ft_zoom_out(f);
 		f->translation.y -= (pos.y / f->zoom) / fabs((tl / (WIDTH / 25) - 18));
