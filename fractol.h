@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 10:31:29 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 12:12:10 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ typedef struct	s_fractol
 
 	void		*mlx;
 	void		*win;
-//	void		*win2;
+	void		*win2;
 	//////img//////
 	void		*img;
 	int			*image;

@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 07:15:25 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 09:03:32 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 12:11:17 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_reset(t_fract *f)
 int		ft_exit(t_fract *f)
 {
 	mlx_destroy_window(f->mlx, f->win);
+	mlx_destroy_window(f->mlx, f->win2);
 	mlx_destroy_image(f->mlx, f->img);
 	exit(0);
 	return (0);

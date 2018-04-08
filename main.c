@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:53:12 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 10:42:42 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 12:12:55 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,26 @@ static int	ft_mlx(t_fract *f)
 	mlx_hook(f->win, MOTION_NOTIFY, POINTER_MOTION_MASK, ft_mouse_move, f);
 	mlx_hook(f->win, DESTROY_NOTIFY, STRUCTURE_NOTIFY_MASK, ft_exit, f);
 	mlx_loop(f->mlx);
+	return (0);
+}
+
+static int	ft_controls(t_fract *f)
+{
+	f->win2 = mlx_new_window(f->mlx, 400, 300, "Controls");
+	mlx_string_put(f->mlx, f->win2, 10, 10, 0xFFFFFF, "Keyboard Controls:");
+	mlx_string_put(f->mlx, f->win2, 50, 40, 0xCCCCCC, "[1] [2] [3]:     \
+	Change Fractal");
+	mlx_string_put(f->mlx, f->win2, 50, 70, 0xCCCCCC, "[^] [v] [<] [>]: \
+	Move");
+	mlx_string_put(f->mlx, f->win2, 50, 100, 0xCCCCCC, "[R]:             \
+	Reset");
+	mlx_string_put(f->mlx, f->win2, 50, 130, 0xCCCCCC, "[SPACE]:         \
+	Lock");
+	mlx_string_put(f->mlx, f->win2, 10, 175, 0xFFFFFF, "Mouse Controls:");
+	mlx_string_put(f->mlx, f->win2, 50, 205, 0xCCCCCC, "[Wheel]:         \
+	Zoom");
+	mlx_string_put(f->mlx, f->win2, 50, 235, 0xCCCCCC, "[Click & Drag]:  \
+	Move");
 	return (0);
 }
 
@@ -67,6 +87,7 @@ int			main(int ac, char **av)
 
 	if (ft_init(&f, ft_error(ac, av)) == -1)
 		return (-1);
+	ft_controls(&f);
 	ft_fractals(&f);
 	ft_mlx(&f);
 	return (0);
