@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 09:24:09 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 10:00:20 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@
 
 # define ESCAPE					53
 # define KEY_R					15
+# define PLUS					24
+# define MINUS					27
 # define SPACEBAR				49
+# define PAD_ADD				69
+# define PAD_SUB				78
 # define LEFT					123
 # define RIGHT					124
 # define DOWN					125
@@ -119,7 +123,9 @@ int				ft_keys(int keycode, t_fract *f);
 int				ft_mouse_press(int button, int x, int y, t_fract *f);
 int				ft_mouse_release(int button, int x, int y, t_fract *f);
 int				ft_mouse_move(int x, int y, t_fract *f);
-int				ft_zoom(int button, int x, int y, t_fract *f);
+int				ft_mouse_zoom(int button, int x, int y, t_fract *f);
+int				ft_zoom_in(t_fract *f);
+int				ft_zoom_out(t_fract *f);
 int				ft_color(double l);
 int				ft_reset(t_fract *f);
 int				ft_exit(t_fract *f);

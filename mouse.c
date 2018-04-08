@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 16:32:33 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 08:51:51 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/08 09:41:51 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_mouse_press(int button, int x, int y, t_fract *f)
 		f->move.click_y = y;
 	}
 	if (button == 4 || button == 5)
-		ft_zoom(button, x, y, f);
+		ft_mouse_zoom(button, x, y, f);
 	return (0);
 }
 
