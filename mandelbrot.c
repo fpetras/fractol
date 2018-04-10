@@ -6,13 +6,13 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 07:19:00 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 11:35:48 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/09 15:50:38 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	ft_mandelbrot2(t_fract *t, t_complex c)
+static void	ft_mandelbrot2(t_fract *t, t_complex c)
 {
 	int		i;
 	int		max;
@@ -34,7 +34,6 @@ static int	ft_mandelbrot2(t_fract *t, t_complex c)
 	}
 	l = ((double)i / max) * t->color_lvl;
 	t->image[t->coord.y * WIDTH + t->coord.x] = (i < max) ? ft_color(l) : 0;
-	return (0);
 }
 
 void		*ft_mandelbrot(void *f)

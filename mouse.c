@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 16:32:33 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 10:31:36 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/10 09:26:28 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ int		ft_mouse_move(int x, int y, t_fract *f)
 		f->move.click_x = x;
 		f->move.click_y = y;
 	}
-	if (f->lock == 0 && f->fractal == JULIA)
+	if (f->lock == 0 && (f->fractal == JULIA || f->fractal == BRAIN))
 	{
-		f->c_r = (x - WIDTH / 2) * 0.003;
-		f->c_i = (y - HEIGHT / 2) * 0.002;
+		f->c_r = (x - WIDTH / 2) * 0.0035;
+		f->c_i = (y - HEIGHT / 2) * 0.0035;
 		ft_fractals(f);
 	}
 	return (0);

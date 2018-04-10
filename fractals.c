@@ -6,13 +6,13 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 08:00:08 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 12:55:30 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/10 09:05:00 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		ft_fractals(t_fract *f)
+void	ft_fractals(t_fract *f)
 {
 	int			i;
 	pthread_t	thr[THREADS];
@@ -30,10 +30,13 @@ int		ft_fractals(t_fract *f)
 			pthread_create(&thr[i], NULL, ft_julia, &t[i]);
 		else if (f->fractal == BURNINGSHIP)
 			pthread_create(&thr[i], NULL, ft_burningship, &t[i]);
+		else if (f->fractal == TRICORN)
+			pthread_create(&thr[i], NULL, ft_mandelbar, &t[i]);
+		else if (f->fractal == BRAIN)
+			pthread_create(&thr[i], NULL, ft_brain, &t[i]);
 	}
 	i = -1;
 	while (++i < THREADS)
 		pthread_join(thr[i], NULL);
 	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
-	return (0);
 }

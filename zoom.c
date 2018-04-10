@@ -6,25 +6,24 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 14:08:19 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 10:41:57 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/09 09:33:22 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		ft_zoom_out(t_fract *f)
+void	ft_zoom_out(t_fract *f)
 {
 	if (f->zoom_lvl < MIN_ZOOM)
-		return (0);
+		return ;
 	f->iteration -= 1;
 	f->zoom /= 1.1;
 	f->zoom_lvl = f->iteration - ITERATIONS;
 	if (f->lock == 0)
 		f->lock = (f->zoom_lvl > 42) ? 1 : 0;
-	return (0);
 }
 
-int		ft_zoom_in(t_fract *f)
+void	ft_zoom_in(t_fract *f)
 {
 	if (f->zoom_lvl > MAX_ZOOM)
 		ft_reset(f);
@@ -33,10 +32,9 @@ int		ft_zoom_in(t_fract *f)
 	f->zoom_lvl = f->iteration - ITERATIONS;
 	if (f->lock == 0)
 		f->lock = (f->zoom_lvl > 42) ? 1 : 0;
-	return (0);
 }
 
-int		ft_mouse_zoom(int button, int x, int y, t_fract *f)
+void	ft_mouse_zoom(int button, int x, int y, t_fract *f)
 {
 	t_double	pos;
 	double		tl;
@@ -58,6 +56,6 @@ int		ft_mouse_zoom(int button, int x, int y, t_fract *f)
 		f->translation.x -= (pos.x / f->zoom) / fabs((tl / (HEIGHT / 25) - 18));
 		f->translation.y -= (pos.y / f->zoom) / fabs((tl / (WIDTH / 25) - 18));
 	}
+	(f->zoom_lvl >= MAX_ZOOM) ? ft_reset(f) : 0;
 	ft_fractals(f);
-	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:53:12 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 12:43:28 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/10 09:41:34 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	ft_mlx(t_fract *f)
+static void	ft_mlx(t_fract *f)
 {
 	mlx_key_hook(f->win, ft_keys, f);
 	mlx_mouse_hook(f->win, ft_mouse, f);
@@ -20,14 +20,13 @@ static int	ft_mlx(t_fract *f)
 	mlx_hook(f->win, MOTION_NOTIFY, POINTER_MOTION_MASK, ft_mouse_move, f);
 	mlx_hook(f->win, DESTROY_NOTIFY, STRUCTURE_NOTIFY_MASK, ft_exit, f);
 	mlx_loop(f->mlx);
-	return (0);
 }
 
-static int	ft_controls(t_fract *f)
+static void	ft_controls(t_fract *f)
 {
 	f->win2 = mlx_new_window(f->mlx, 400, 400, "Controls");
 	mlx_string_put(f->mlx, f->win2, 10, 10, 0xFFFFFF, "Keyboard Controls:");
-	mlx_string_put(f->mlx, f->win2, 50, 40, 0xCCCCCC, "[1] [2] [3]:     \
+	mlx_string_put(f->mlx, f->win2, 50, 40, 0xCCCCCC, "[1 - 5]:         \
 	Change Fractal");
 	mlx_string_put(f->mlx, f->win2, 50, 70, 0xCCCCCC, "[+] [-]:         Zoom");
 	mlx_string_put(f->mlx, f->win2, 50, 100, 0xCCCCCC, "[^] [v] [<] [>]:");
@@ -41,7 +40,6 @@ static int	ft_controls(t_fract *f)
 	mlx_string_put(f->mlx, f->win2, 10, 295, 0xFFFFFF, "Mouse Controls:");
 	mlx_string_put(f->mlx, f->win2, 50, 325, 0xCCCCCC, "[Wheel]:         Zoom");
 	mlx_string_put(f->mlx, f->win2, 50, 355, 0xCCCCCC, "[Click & Drag]:  Move");
-	return (0);
 }
 
 static int	ft_init(t_fract *f, int fractal)
@@ -74,12 +72,22 @@ static int	ft_error(int ac, char **av)
 			return (JULIA);
 		else if (ft_strcasecmp(av[1], "burningship") == 0)
 			return (BURNINGSHIP);
+		else if (ft_strcasecmp(av[1], "tricorn") == 0 ||
+				ft_strcasecmp(av[1], "mandelbar") == 0)
+			return (TRICORN);
+		else if (ft_strcasecmp(av[1], "brain") == 0)
+			return (BRAIN);
 		else
-			ft_dprintf(2, "usage: %s [mandelbrot | julia | burningship]\n",
-				av[0]);
+		{
+			ft_dprintf(2, "usage: %s [mandelbrot | julia | burningship", av[0]);
+			ft_dprintf(2, " | tricorn | brain]\n");
+		}
 	}
 	else
-		ft_dprintf(2, "usage: %s [mandelbrot | julia | burningship]\n", av[0]);
+	{
+		ft_dprintf(2, "usage: %s [mandelbrot | julia | burningship", av[0]);
+		ft_dprintf(2, " | tricorn | brain]\n");
+	}
 	return (-1);
 }
 

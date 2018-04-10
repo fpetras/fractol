@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 12:56:22 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/10 09:42:30 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@
 # define KEY_1					18
 # define KEY_2					19
 # define KEY_3					20
+# define KEY_4					21
+# define KEY_5					23
 # define PLUS					24
 # define MINUS					27
 # define SPACEBAR				49
@@ -45,6 +47,8 @@
 # define PAD_1					83
 # define PAD_2					84
 # define PAD_3					85
+# define PAD_4					86
+# define PAD_5					87
 # define LEFT					123
 # define RIGHT					124
 # define DOWN					125
@@ -58,6 +62,8 @@
 # define MANDELBROT				1
 # define JULIA					2
 # define BURNINGSHIP			3
+# define TRICORN				4
+# define BRAIN					5
 
 # define WIDTH					768
 # define HEIGHT					WIDTH
@@ -132,19 +138,21 @@ typedef struct	s_fractol
 	double		c_i;
 }				t_fract;
 
-int				ft_fractals(t_fract *f);
+void			ft_fractals(t_fract *f);
 void			*ft_mandelbrot(void *f);
 void			*ft_julia(void *f);
 void			*ft_burningship(void *f);
+void			*ft_mandelbar(void *f);
+void			*ft_brain(void *f);
 int				ft_keys(int keycode, t_fract *f);
 int				ft_mouse(int button, int x, int y, t_fract *f);
 int				ft_mouse_release(int button, int x, int y, t_fract *f);
 int				ft_mouse_move(int x, int y, t_fract *f);
-int				ft_mouse_zoom(int button, int x, int y, t_fract *f);
-int				ft_zoom_in(t_fract *f);
-int				ft_zoom_out(t_fract *f);
+void			ft_mouse_zoom(int button, int x, int y, t_fract *f);
+void			ft_zoom_in(t_fract *f);
+void			ft_zoom_out(t_fract *f);
 int				ft_color(double l);
-int				ft_reset(t_fract *f);
+void			ft_reset(t_fract *f);
 int				ft_exit(t_fract *f);
 
 int				ft_strcasecmp(const char *s1, const char *s2);

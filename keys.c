@@ -6,23 +6,22 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 16:32:19 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/08 12:07:56 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/10 09:26:05 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	ft_fn(int keycode, t_fract *f)
+static void	ft_fn(int keycode, t_fract *f)
 {
 	if (keycode == FN && f->color_lvl <= MAX_COLOR)
 	{
 		f->color_lvl += 5;
 		ft_fractals(f);
 	}
-	return (0);
 }
 
-static int	ft_up_down_left_right(int keycode, t_fract *f)
+static void	ft_up_down_left_right(int keycode, t_fract *f)
 {
 	if (keycode == LEFT || keycode == RIGHT || keycode == DOWN || keycode == UP)
 	{
@@ -41,30 +40,27 @@ static int	ft_up_down_left_right(int keycode, t_fract *f)
 		keycode == KEY_W ? f->translation.y -= 0.1 / f->zoom : 0;
 		ft_fractals(f);
 	}
-	return (0);
 }
 
-static int	ft_123(int keycode, t_fract *f)
+static void	ft_digits(int keycode, t_fract *f)
 {
 	if ((keycode == KEY_1 || keycode == PAD_1) && f->fractal != MANDELBROT)
-	{
 		f->fractal = MANDELBROT;
-		ft_reset(f);
-	}
-	if ((keycode == KEY_2 || keycode == PAD_2) && f->fractal != JULIA)
-	{
+	else if ((keycode == KEY_2 || keycode == PAD_2) && f->fractal != JULIA)
 		f->fractal = JULIA;
-		ft_reset(f);
-	}
-	if ((keycode == KEY_3 || keycode == PAD_3) && f->fractal != BURNINGSHIP)
-	{
+	else if ((keycode == KEY_3 || keycode == PAD_3) &&
+			f->fractal != BURNINGSHIP)
 		f->fractal = BURNINGSHIP;
-		ft_reset(f);
-	}
-	return (0);
+	else if ((keycode == KEY_4 || keycode == PAD_4) && f->fractal != TRICORN)
+		f->fractal = TRICORN;
+	else if ((keycode == KEY_5 || keycode == PAD_5) && f->fractal != BRAIN)
+		f->fractal = BRAIN;
+	else
+		return ;
+	ft_reset(f);
 }
 
-static int	ft_plus_minus(int keycode, t_fract *f)
+static void	ft_plus_minus(int keycode, t_fract *f)
 {
 	if (keycode == PLUS || keycode == PAD_ADD)
 	{
@@ -76,7 +72,6 @@ static int	ft_plus_minus(int keycode, t_fract *f)
 		ft_zoom_out(f);
 		ft_fractals(f);
 	}
-	return (0);
 }
 
 int			ft_keys(int keycode, t_fract *f)
@@ -88,7 +83,7 @@ int			ft_keys(int keycode, t_fract *f)
 	if (keycode == ESCAPE)
 		ft_exit(f);
 	ft_plus_minus(keycode, f);
-	ft_123(keycode, f);
+	ft_digits(keycode, f);
 	ft_up_down_left_right(keycode, f);
 	ft_fn(keycode, f);
 	return (0);
