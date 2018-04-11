@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 16:32:33 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/10 09:26:28 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/11 08:38:25 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_mouse(int button, int x, int y, t_fract *f)
 {
-	if (button == LEFT_CLICK)
+	if (button == LEFT_CLICK && y >= 0)
 	{
 		f->press = 1;
 		f->move.click_x = x;
