@@ -6,7 +6,7 @@
 #    By: fpetras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/04 09:42:02 by fpetras           #+#    #+#              #
-#    Updated: 2018/04/10 09:06:45 by fpetras          ###   ########.fr        #
+#    Updated: 2018/04/12 09:04:22 by fpetras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = main.c \
 	  julia.c \
 	  burningship.c \
 	  tricorn.c \
-	  brain.c \
+	  web.c \
 	  keys.c \
 	  mouse.c \
 	  zoom.c \

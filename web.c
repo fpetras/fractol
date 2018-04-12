@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia.c                                            :+:      :+:    :+:   */
+/*   web.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 08:52:50 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/10 09:04:29 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/12 09:03:35 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void	ft_brain2(t_fract *t, t_complex c)
+static void	ft_web2(t_fract *t, t_complex c)
 {
 	int		i;
 	int		max;
@@ -24,7 +24,7 @@ static void	ft_brain2(t_fract *t, t_complex c)
 	c.z_i = (t->coord.y - HEIGHT / 2) / t->zoom_c.y + t->translation.y;
 	while ((c.z_r * c.z_r + c.z_i * c.z_i) < 4 && i < max)
 	{
-		c.tmp_r = c.z_i;
+		c.tmp_r = sin(c.z_i);
 		c.tmp_i = c.z_r;
 		c.z_r = c.tmp_r * c.tmp_r - c.tmp_i * c.tmp_i + c.c_r;
 		c.z_i = 4 * c.tmp_r * c.tmp_i + c.c_i;
@@ -34,7 +34,7 @@ static void	ft_brain2(t_fract *t, t_complex c)
 	t->image[t->coord.y * WIDTH + t->coord.x] = (i < max) ? ft_color(l) : 0;
 }
 
-void		*ft_brain(void *f)
+void		*ft_web(void *f)
 {
 	t_fract		*t;
 	t_complex	c;
@@ -50,7 +50,7 @@ void		*ft_brain(void *f)
 		c.c_i = t->c_i;
 		while (t->coord.x < WIDTH)
 		{
-			ft_brain2(t, c);
+			ft_web2(t, c);
 			t->coord.x++;
 		}
 		t->coord.y++;

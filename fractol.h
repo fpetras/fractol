@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/10 09:42:30 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/12 09:02:45 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@
 # define JULIA					2
 # define BURNINGSHIP			3
 # define TRICORN				4
-# define BRAIN					5
+# define WEB					5
 
 # define WIDTH					768
 # define HEIGHT					WIDTH
@@ -143,7 +143,7 @@ void			*ft_mandelbrot(void *f);
 void			*ft_julia(void *f);
 void			*ft_burningship(void *f);
 void			*ft_mandelbar(void *f);
-void			*ft_brain(void *f);
+void			*ft_web(void *f);
 int				ft_keys(int keycode, t_fract *f);
 int				ft_mouse(int button, int x, int y, t_fract *f);
 int				ft_mouse_release(int button, int x, int y, t_fract *f);

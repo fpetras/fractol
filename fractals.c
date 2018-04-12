@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 08:00:08 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/10 09:05:00 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/12 09:03:02 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_fractals(t_fract *f)
 			pthread_create(&thr[i], NULL, ft_burningship, &t[i]);
 		else if (f->fractal == TRICORN)
 			pthread_create(&thr[i], NULL, ft_mandelbar, &t[i]);
-		else if (f->fractal == BRAIN)
-			pthread_create(&thr[i], NULL, ft_brain, &t[i]);
+		else if (f->fractal == WEB)
+			pthread_create(&thr[i], NULL, ft_web, &t[i]);
 	}
 	i = -1;
 	while (++i < THREADS)

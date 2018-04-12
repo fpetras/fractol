@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:53:12 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/10 09:41:34 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/12 09:02:08 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,18 +75,18 @@ static int	ft_error(int ac, char **av)
 		else if (ft_strcasecmp(av[1], "tricorn") == 0 ||
 				ft_strcasecmp(av[1], "mandelbar") == 0)
 			return (TRICORN);
-		else if (ft_strcasecmp(av[1], "brain") == 0)
-			return (BRAIN);
+		else if (ft_strcasecmp(av[1], "web") == 0)
+			return (WEB);
 		else
 		{
 			ft_dprintf(2, "usage: %s [mandelbrot | julia | burningship", av[0]);
-			ft_dprintf(2, " | tricorn | brain]\n");
+			ft_dprintf(2, " | tricorn | web]\n");
 		}
 	}
 	else
 	{
 		ft_dprintf(2, "usage: %s [mandelbrot | julia | burningship", av[0]);
-		ft_dprintf(2, " | tricorn | brain]\n");
+		ft_dprintf(2, " | tricorn | web]\n");
 	}
 	return (-1);
 }

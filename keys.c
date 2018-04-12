@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 16:32:19 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/10 09:26:05 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/12 09:03:48 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static void	ft_digits(int keycode, t_fract *f)
 		f->fractal = BURNINGSHIP;
 	else if ((keycode == KEY_4 || keycode == PAD_4) && f->fractal != TRICORN)
 		f->fractal = TRICORN;
-	else if ((keycode == KEY_5 || keycode == PAD_5) && f->fractal != BRAIN)
-		f->fractal = BRAIN;
+	else if ((keycode == KEY_5 || keycode == PAD_5) && f->fractal != WEB)
+		f->fractal = WEB;
 	else
 		return ;
 	ft_reset(f);
