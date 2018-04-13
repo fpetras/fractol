@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/12 09:02:45 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/13 15:11:10 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,6 @@ typedef struct	s_complex
 typedef struct	s_fractol
 {
 	int			fractal;
-
 	void		*mlx;
 	void		*win;
 	void		*win2;

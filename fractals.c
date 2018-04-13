@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 08:00:08 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/12 09:03:02 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/13 10:57:52 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_fractals(t_fract *f)
 {
 	int			i;
-	pthread_t	thr[THREADS];
 	t_fract		t[THREADS];
+	pthread_t	thr[THREADS];
 
 	i = -1;
 	while (++i < THREADS)
