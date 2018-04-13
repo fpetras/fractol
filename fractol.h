@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/13 15:11:10 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/13 17:07:15 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "libft/get_next_line/get_next_line.h"
 # include "libft/ft_printf/ft_printf.h"
 
-# include <mlx.h>
+# include "mlx.h"
 # include <math.h>
 # include <pthread.h>
 

@@ -6,7 +6,7 @@
 #    By: fpetras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/04 09:42:02 by fpetras           #+#    #+#              #
-#    Updated: 2018/04/12 09:04:22 by fpetras          ###   ########.fr        #
+#    Updated: 2018/04/13 17:07:01 by fpetras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ CC = gcc
 
 FLAGS = -Wall -Werror -Wextra
 
-MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
+MLXFLAGS = libmlx.a -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
