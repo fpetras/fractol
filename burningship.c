@@ -6,17 +6,18 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 07:19:00 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/09 09:36:31 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/22 08:19:57 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void	ft_burningship2(t_fract *t, t_complex c)
+static void	ft_burningship2(t_fract *t)
 {
-	int		i;
-	int		max;
-	double	l;
+	int			i;
+	int			max;
+	double		l;
+	t_complex	c;
 
 	i = 0;
 	max = t->iteration;
@@ -38,8 +39,7 @@ static void	ft_burningship2(t_fract *t, t_complex c)
 
 void		*ft_burningship(void *f)
 {
-	t_fract		*t;
-	t_complex	c;
+	t_fract *t;
 
 	t = (t_fract*)f;
 	t->zoom_c.x = 0.3 * t->zoom * WIDTH;
@@ -52,7 +52,7 @@ void		*ft_burningship(void *f)
 		t->coord.x = 0;
 		while (t->coord.x < WIDTH)
 		{
-			ft_burningship2(t, c);
+			ft_burningship2(t);
 			t->coord.x++;
 		}
 		t->coord.y++;

@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:45:43 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/13 17:07:15 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/04/22 08:18:22 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@
 # define WIDTH					768
 # define HEIGHT					WIDTH
 
-# define THREADS				32
+# define THREADS				WIDTH
 # define ITERATIONS				100
 
 # define MIN_ZOOM				-10
