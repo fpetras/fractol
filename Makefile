@@ -6,7 +6,7 @@
 #    By: fpetras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/04 09:42:02 by fpetras           #+#    #+#              #
-#    Updated: 2018/04/23 12:15:49 by fpetras          ###   ########.fr        #
+#    Updated: 2018/04/24 12:10:14 by fpetras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,7 @@ OBJPATH = obj/
 OBJ = $(addprefix $(OBJPATH),$(SRC:.c=.o))
 
 CC = gcc
-
 CFLAGS = -Wall -Werror -Wextra
-
 MLXFLAGS = libmlx.a -framework OpenGL -framework AppKit
 
 # ----- ANSI Escape Sequences ----- #
@@ -39,18 +37,18 @@ RED = \033[1;31m
 GREEN = \033[1;32m
 YELLOW = \033[1;33m
 BLUE = \033[1;34m
+PURPLE = \033[1;35m
 CYAN = \033[1;36m
 WHITE = \033[1;37m
-YELLOW_UNDERLINED = \033[4;33m
+UNDERLINE = \033[0;4m
 TEXT_RESET = \033[0;0m
 # --------------------------------- #
-
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(TEXT_RESET)"
-	@echo "\033[4mlibft:\033[0m" # underline
+	@echo "$(UNDERLINE)libft:$(TEXT_RESET)"
 	@echo "$(BLUE)"
 	@make -C libft
 	@echo "$(TEXT_RESET)"
@@ -61,7 +59,7 @@ $(NAME): $(OBJ)
 $(OBJPATH)%.o: %.c
 	@test -d $(OBJPATH) || mkdir $(OBJPATH)
 	@echo "$(CYAN)Compiling $<"
-	@$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@make clean -C libft

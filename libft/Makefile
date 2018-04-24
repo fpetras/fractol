@@ -6,7 +6,7 @@
 #    By: fpetras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 08:34:49 by fpetras           #+#    #+#              #
-#    Updated: 2018/04/23 11:45:53 by fpetras          ###   ########.fr        #
+#    Updated: 2018/04/24 11:53:27 by fpetras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,8 +61,9 @@ OBJ += $(addprefix $(GET_NEXT_LINE_PATH),$(GET_NEXT_LINE_SRC:.c=.o))
 OBJ += $(addprefix $(FT_PRINTF_PATH),$(FT_PRINTF_SRC:.c=.o))
 
 CC = gcc
-
 CFLAGS = -Wall -Wextra -Werror
+
+CLEAR_LINE = \033[2K\c
 
 all: $(NAME)
 
@@ -71,10 +72,10 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
-$(OBJPATH)%.o: %.c
-	@echo "\033[2K\c"
+%.o: %.c
+	@echo "$(CLEAR_LINE)"
 	@echo "Compiling $<\r\c"
-	@$(CC) $(CFAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
@@ -83,3 +84,5 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
