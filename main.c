@@ -6,7 +6,7 @@
 /*   By: fpetras <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 09:53:12 by fpetras           #+#    #+#             */
-/*   Updated: 2018/04/12 09:02:08 by fpetras          ###   ########.fr       */
+/*   Updated: 2018/06/05 08:11:55 by fpetras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ static void	ft_controls(t_fract *f)
 	f->win2 = mlx_new_window(f->mlx, 400, 400, "Controls");
 	mlx_string_put(f->mlx, f->win2, 10, 10, 0xFFFFFF, "Keyboard Controls:");
 	mlx_string_put(f->mlx, f->win2, 50, 40, 0xCCCCCC, "[1 - 5]:         \
-	Change Fractal");
+	Change fractal");
 	mlx_string_put(f->mlx, f->win2, 50, 70, 0xCCCCCC, "[+] [-]:         Zoom");
 	mlx_string_put(f->mlx, f->win2, 50, 100, 0xCCCCCC, "[^] [v] [<] [>]:");
 	mlx_string_put(f->mlx, f->win2, 50, 130, 0xCCCCCC, "[W] [A] [S] [D]:");
 	mlx_string_put(f->mlx, f->win2, 220, 115, 0xCCCCCC, "Move");
 	mlx_string_put(f->mlx, f->win2, 50, 160, 0xCCCCCC, "[SPACE]:         Lock");
-	mlx_string_put(f->mlx, f->win2, 50, 190, 0xCCCCCC, "[Fn]:            ???");
+	mlx_string_put(f->mlx, f->win2, 50, 190, 0xCCCCCC, "[Fn]:            \
+	Change colors");
 	mlx_string_put(f->mlx, f->win2, 50, 220, 0xCCCCCC, "[R]:             \
 	Reset");
 	mlx_string_put(f->mlx, f->win2, 50, 250, 0xCCCCCC, "[Esc]:           Quit");

@@ -6,7 +6,7 @@
 #    By: fpetras <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/04 09:42:02 by fpetras           #+#    #+#              #
-#    Updated: 2018/04/24 12:10:14 by fpetras          ###   ########.fr        #
+#    Updated: 2018/06/05 08:12:41 by fpetras          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRC = main.c \
 	  mouse.c \
 	  zoom.c \
 	  utilities.c \
-	  ft_strcasecmp.c
 
 OBJPATH = obj/
 OBJ = $(addprefix $(OBJPATH),$(SRC:.c=.o))
